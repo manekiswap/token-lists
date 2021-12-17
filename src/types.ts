@@ -1,3 +1,9 @@
+type BridgeInfo = {
+  tokenAddress: string;
+  originBridgeAddress?: string;
+  destBridgeAddress?: string;
+};
+
 export interface TokenInfo {
   readonly chainId: number;
   readonly address: string;
@@ -7,7 +13,7 @@ export interface TokenInfo {
   readonly logoURI?: string;
   readonly tags?: string[];
   readonly extensions?: {
-    readonly [key: string]: string | number | boolean | null;
+    readonly [key: string]: BridgeInfo | any;
   };
 }
 
